@@ -20,13 +20,33 @@ $(document).ready(function(){
     // get the maker function for the kind of dancer we're supposed to make
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
-    // make a dancer with a random position
-    var dancer = new dancerMakerFunction(
-      $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
-      Math.random() * 1000
-    );
-    $('body').append(dancer.$node);
+    if (dancerMakerFunctionName === 'makeJumpDancer') {
+      for (var i = 0; i < 4; i++) {
+        var dancer = new dancerMakerFunction(
+          $(".audience.bottom").height() * Math.random() + $(".topbar").height() + $(".audience.top").height() + $(".audience.middle").height(),
+          $(".audience.bottom").width() * Math.random(),
+          Math.random() * 1000
+        );
+        $('body').append(dancer.$node);
+      }
+    } else if (dancerMakerFunctionName === 'makeBlinkyDancer'){
+      var dancer = new dancerMakerFunction(
+        $(".audience.middle").height() * Math.random() + $(".topbar").height() + $(".audience.top").height(),
+        $(".audience.middle").width() * Math.random(),
+        Math.random() * 1000
+      );
+      $('body').append(dancer.$node);
+      dancer.$node.append('<img class="flash" src="svg/flash.svg" alt="flash">');
+    } else if (dancerMakerFunctionName === 'makeHorizontalDancer') {
+      var dancer = new dancerMakerFunction(
+        $(".racetrack").height() * Math.random() + $(".audience.top").height() + $(".audience.middle").height() + $(".audience.bottom").height() + $(".topbar").height(),
+        $(".racetrack").width() * Math.random(),
+        Math.random() * 100
+      );
+      $('body').append(dancer.$node);
+      dancer.$node.append('<div class="racehorseContainer"></div>');
+    }
+
   });
 
   $(".stopStartButton").on("click", function(e){

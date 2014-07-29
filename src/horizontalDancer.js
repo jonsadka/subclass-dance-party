@@ -1,6 +1,6 @@
 var makeHorizontalDancer = function(top, left, timeBetweenSteps){
   Dancer.call(this, top, left, timeBetweenSteps);
-  this.left = left;
+  this.left = left + 500;
 };
 
 makeHorizontalDancer.prototype = Object.create(Dancer.prototype);
