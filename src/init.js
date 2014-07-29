@@ -28,5 +28,10 @@ $(document).ready(function(){
     );
     $('body').append(dancer.$node);
   });
+
+  $(".stopStartButton").on("click", function(e){
+    if ($('.stopStart').html() === 'Start') { $('.stopStart').html('Stop'); }
+    else { $('.stopStart').html('Start'); }
+  });
 });
 
