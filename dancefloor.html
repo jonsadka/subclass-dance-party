@@ -5,20 +5,26 @@
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <script src="lib/jquery.js"></script>
     <script src="src/dancer.js"></script>
-    <script src="src/blinkyDancer.js"></script>
-    <script src="src/horizontalDancer.js"></script>
-    <script src="src/jumpDancer.js"></script>
+    <script src="src/flashDancer.js"></script>
+    <script src="src/horseDancer.js"></script>
+    <script src="src/fanDancer.js"></script>
+    <script src="src/collisions.js"></script>
   </head>
   <body>
     <div class="topbar">
-      <span class="title">object dance party</span>
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeBlinkyDancer">add a blinky dancer</a>
+      <span class="title">Object racetrack party</span>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="flashDancer">add a flash</a>
 
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeJumpDancer">add a jumpy dancer</a>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="fanDancer">add a fan</a>
 
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeHorizontalDancer">add a horizontal dancer</a>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="horseDancer">add a racehorse</a>
 
-      <a href="#" class="stopStartButton" data-stop-start-function-name="stopStart">stop/start race</a>
+      <a href="#" class="stopStartButton" data-stop-start-function-name="stopStart">stop/start race </a>
+
+      <audio controls autoplay loop>
+        <source src="audio/anthem.mp3" type="audio/mp3"/>
+      </audio>
+
       </div>
       <span class='stopStart'>Stop</span>
 

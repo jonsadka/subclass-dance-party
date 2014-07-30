@@ -1,14 +1,12 @@
 body, html{
   height:100%;
+  background-color: #3D8A22;
 }
 body{
   margin: 0px;
   font-size: 18px;
-  background: url('img/bg.jpg') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: url('img/bg.jpg') no-repeat top left fixed;
+  background-size: 100%;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
@@ -25,49 +23,80 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
   position:absolute;
 }
 .racetrack{
-  height: 70%;
-  width: 95%;
-  border: 1px solid red;
+  height: 28%;
+  width: 99%;
+  margin-top: 7%;
 }
 
 .audience.top{
-  height: 10%;
+  height: 5%;
   width: 20%;
-  border: 1px solid green;
 }
 
 .audience.middle{
-  height: 5%;
-  width: 50%;
-  border: 1px solid green;
-
+  height: 10%;
+  width: 40%;
+  margin-top: 140px;
 }
 
 .audience.bottom{
-  height: 20%;
+  height: 5%;
   width: 95%;
-  border: 1px solid green;
+}
+
+.spectator1{
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: url(img/0.png);
+  z-index: 0;
+}
+
+.spectator2{
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: url(img/1.png);
+  z-index: 0;
 }
 
 .racehorseContainer{
   display: block;
   text-indent: -9999px;
-  width: 250px;
-  height: 250px;
-  background: url(svg/horse.svg);
-  background-size: 100% 100%;
-  -moz-transform: scaleX(-1);
-  -o-transform: scaleX(-1);
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-  filter: FlipH;
-  -ms-filter: "FlipH";
+  width: 262px;
+  height: 184px;
+  z-index: 1;
 }
+
+.horse1{
+  background: url(img/horse1.png);
+  background-size: 100% 100%;
+  z-index: 1;
+}
+
+.horse2{
+  background: url(img/horse2.png);
+  background-size: 100% 100%;
+  z-index: 1;
+}
+
+.racehorseContainer:hover{
+  -webkit-animation:spin 1s linear infinite;
+  -moz-animation:spin 1s linear infinite;
+  animation:spin 1s linear infinite;
+}
+
+
+@-moz-keyframes spin {
+  100% { -moz-transform: rotate(-360deg)  scale(1); } }
+@-webkit-keyframes spin {
+ 100% { -webkit-transform: rotate(-360deg)  scale(1); } }
+@keyframes spin {
+ 100% { -webkit-transform: rotate(-360deg) scale(1);
+  transform:rotate(-360deg)  scale(1); } }
 
 .flash{
   height: 15px;

@@ -20,33 +20,38 @@ $(document).ready(function(){
     // get the maker function for the kind of dancer we're supposed to make
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
-    if (dancerMakerFunctionName === 'makeJumpDancer') {
+    if (dancerMakerFunctionName === 'fanDancer') {
       for (var i = 0; i < 4; i++) {
         var dancer = new dancerMakerFunction(
-          $(".audience.bottom").height() * Math.random() + $(".topbar").height() + $(".audience.top").height() + $(".audience.middle").height(),
+          $(".audience.bottom").height() * Math.random() + 320,
           $(".audience.bottom").width() * Math.random(),
           Math.random() * 1000
         );
         $('body').append(dancer.$node);
+
+        if (i <= 1) {
+          dancer.$node.append('<div class="spectator1"></div>');
+        } else {
+          dancer.$node.append('<div class="spectator2"></div>');
+        }
       }
-    } else if (dancerMakerFunctionName === 'makeBlinkyDancer'){
+    } else if (dancerMakerFunctionName === 'flashDancer'){
       var dancer = new dancerMakerFunction(
-        $(".audience.middle").height() * Math.random() + $(".topbar").height() + $(".audience.top").height(),
+        $(".audience.middle").height() * Math.random() + 200,
         $(".audience.middle").width() * Math.random(),
         Math.random() * 1000
       );
       $('body').append(dancer.$node);
       dancer.$node.append('<img class="flash" src="svg/flash.svg" alt="flash">');
-    } else if (dancerMakerFunctionName === 'makeHorizontalDancer') {
+    } else if (dancerMakerFunctionName === 'horseDancer') {
       var dancer = new dancerMakerFunction(
-        $(".racetrack").height() * Math.random() + $(".audience.top").height() + $(".audience.middle").height() + $(".audience.bottom").height() + $(".topbar").height(),
+        $(".racetrack").height() * Math.random() + 400,
         $(".racetrack").width() * Math.random(),
         Math.random() * 100
       );
       $('body').append(dancer.$node);
-      dancer.$node.append('<div class="racehorseContainer"></div>');
+      dancer.$node.append('<div class="racehorseContainer horse1"></div>');
     }
-
   });
 
   $(".stopStartButton").on("click", function(e){
